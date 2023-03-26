@@ -1,0 +1,73 @@
+{
+  "name": "svg-component-vite-plugin",
+  "version": "0.3.0",
+  "keywords": [
+    "svg",
+    "react",
+    "component",
+    "vite"
+  ],
+  "main": "dist",
+  "description": "vite svg component plugin",
+  "author": "Jupiter <xiong0201y@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@svgr/core": "^6.5.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.15.7",
+    "@types/react": "^18.0.29",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tslib": "^2.5.0",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "tsup react-plugin/index.ts --watch",
+    "build": "tsup && node moveFile.js"
+  },
+  "exports": {
+    ".": {
+      "dist/react": {
+        "require": "./dist/react/index.js",
+        "import": "./dist/react/index.mjs",
+        "types": "./dist/react/index.d.ts"
+      },
+      "dist/vue": {
+        "require": "./dist/vue/index.js",
+        "import": "./dist/vue/index.mjs",
+        "types": "./dist/vue/index.d.ts"
+      }
+    },
+    "./dist/react": {
+      "require": "./dist/react/index.js",
+      "import": "./dist/react/index.mjs",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./dist/vue": {
+      "require": "./dist/vue/index.js",
+      "import": "./dist/vue/index.mjs",
+      "types": "./dist/vue/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "peerDependencies": {
+    "vite": "*",
+    "react": "*"
+  },
+  "files": [
+    "dist",
+    "./README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasJupiter/vite-plugin-svg-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicholasJupiter/vite-plugin-svg-component/issues"
+  },
+  "homepage": "https://github.com/NicholasJupiter/vite-plugin-svg-component#readme"
+}

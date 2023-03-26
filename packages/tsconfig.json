@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "sourceMap": true,
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM.Iterable",
+      "DOM",
+    ],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": false,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    "preserveWatchOutput": true,
+    "baseUrl": ".",
+    "paths": {
+      "./react/*": [
+        "./dist/react/*"
+      ],
+      "./vue/*": [
+        "./dist/vue/*"
+      ],
+    }
+  },
+  "include": [
+    "react-plugin",
+    "vue-plugin"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
