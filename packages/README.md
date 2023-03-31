@@ -3,9 +3,9 @@
 
 ## how to use 
 
-`npm i svg-component-vite-plugin` 
+`npm i -D svg-component-vite-plugin` 
 or
-`yarn add svg-component-vite-plugin`
+`yarn add -D svg-component-vite-plugin`
 
 
 ## react
