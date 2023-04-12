@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { viteReactSvgComponentPlugin } from 'svg-component-vite-plugin/dist/react';
+// import { viteReactSvgComponentPlugin } from 'svg-component-vite-plugin/dist/react';
+import { viteReactSvgComponentPlugin } from '../../packages/dist/react/index.mjs';
 
 const r = (p: string) => resolve(__dirname, p);
 
@@ -15,7 +16,7 @@ export default defineConfig({
   plugins: [
     react(),
     viteReactSvgComponentPlugin({
-      include: 'src/assets/svgs/**/*.svg*'
+      include: './src/assets/svgs/**/*.svg*'
     })
   ]
 });

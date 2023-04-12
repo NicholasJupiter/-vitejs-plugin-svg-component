@@ -23,13 +23,14 @@ export function viteReactSvgComponentPlugin(options: TPluginOptions): Plugin {
     async transform(_code: string, uri: string) {
       if (filter(uri)) {
         let returnCode = _catch.get(uri);
+        
         if (!returnCode) {
           const svgCode = await fs.promises.readFile(uri.replace(/\?.*$/, ''), 'utf8');
           const reactJsxCode = await compilerSvg(uri, svgCode, options);
           returnCode = handleProps(reactJsxCode.code);
           returnCode += `
             export const svgCode = \`${svgCode}\`;
-            export const uri = \`${uri}\`;
+            export const uri = \`${_code.replace(/.*["'](.*)['"]/,'$1')}\`;
           `
           _catch.set(uri, returnCode);
         }
